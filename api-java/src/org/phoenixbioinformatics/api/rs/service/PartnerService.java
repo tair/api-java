@@ -74,7 +74,8 @@ public class PartnerService extends AbstractWebService {
                                   @QueryParam("fake") Boolean fake) {
     Response response = null;
 
-    setFake(fake);
+    // Default fake setting to false.
+    setFake(fake != null ? fake : false);
 
     try {
       // Decide which query to execute based on inputs.
@@ -100,8 +101,8 @@ public class PartnerService extends AbstractWebService {
    * @param fake whether to use a fake API implementation
    */
   private void setFake(Boolean fake) {
-    // Reset to a fake-based test if the fake flag is set by the URI.
-    if (fake) {
+    // Reset to a fake-based test if the fake flag is set true by the URI.
+    if (fake != null && fake) {
       partnerApi =
         new PartnerFacadeSuccessFake(new PartnerSuccessFakeDataAccessDelegate());
     }
@@ -221,7 +222,8 @@ public class PartnerService extends AbstractWebService {
                                     @QueryParam("fake") Boolean fake) {
     Response response = null;
 
-    setFake(fake);
+    // Default fake setting to false.
+    setFake(fake != null ? fake : false);
 
     logger.info("Form params: " + partnerId + ", " + name + ", " + logoUri
                 + ", " + termOfServiceUri);
@@ -269,7 +271,8 @@ public class PartnerService extends AbstractWebService {
                                     @FormParam("termOfServiceUri") String termOfServiceUri) {
     Response response = null;
 
-    setFake(fake);
+    // Default fake setting to false.
+    setFake(fake != null ? fake : false);
 
     logger.info("Form params: " + partnerId + ", " + name + ", " + logoUri
                 + ", " + termOfServiceUri);
@@ -304,7 +307,8 @@ public class PartnerService extends AbstractWebService {
                                     @QueryParam("fake") Boolean fake) {
     Response response = null;
 
-    setFake(fake);
+    // Default fake setting to false.
+    setFake(fake != null ? fake : false);
 
     try {
       // Create a DTO with only the id being used to identify the partner to
