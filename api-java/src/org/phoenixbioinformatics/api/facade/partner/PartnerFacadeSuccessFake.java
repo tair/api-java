@@ -12,7 +12,10 @@ import org.phoenixbioinformatics.api.facade.ApiException;
 
 /**
  * Implements the Partner Facade API with fake operations to permit unit testing
- * of clients, with all methods returning successfully.
+ * of clients, with all methods returning successfully. Keep this source file in
+ * the src directory, as it gets used by the web service, which must set the
+ * fake as part of its operational code because the test harness can't call it
+ * directly and pass in the fake implementation.
  * 
  * @author Robert J. Muller
  */

@@ -45,7 +45,7 @@
      ================================= -->
 	<target name="war-prod" depends="compile" description="Creates a deployable war file for the production TAIR paywall web application">
 		<copy file="${src}/log4j.xml" todir="${build}" overwrite="true" verbose="true" />
-		<copy file="${properties-src-dir}database.properties.prod" tofile="${properties-build-dir}database.properties" overwrite="true" />
+		<copy file="${properties-src-dir}prod.database.properties" tofile="${properties-build-dir}database.properties" overwrite="true" />
 		<war destfile="${dist}/${prod-war-file}" webxml="${web-inf}/web.xml">
 			<classes dir="${build}" />
 			<webinf dir="${web-inf}" excludes="**/web.xml,classes/**,lib/**" />
@@ -60,7 +60,7 @@
      ================================= -->
 	<target name="war-test" depends="compile" description="Creates a deployable war file for the test TAIR paywall web application">
 		<copy file="${src}/log4j.xml" todir="${build}" overwrite="true" verbose="true" />
-		<copy file="${properties-src-dir}database.properties.test" tofile="${properties-build-dir}database.properties" overwrite="true" />
+		<copy file="${properties-src-dir}test.database.properties" tofile="${properties-build-dir}database.properties" overwrite="true" />
 		<war destfile="${dist}/${test-war-file}" webxml="${web-inf}/web.xml">
 			<classes dir="${build}" />
 			<webinf dir="${web-inf}" excludes="**/web.xml,classes/**,lib/**" />

@@ -17,7 +17,10 @@ import com.poesys.bs.delegate.DelegateException;
 /**
  * Implements the Partner data access delegate with fake operations to permit
  * unit testing of the Partner facade, with all methods returning data or
- * succeeding without error.
+ * succeeding without error. Keep this source file in the src directory, as it
+ * gets used by the web service, which must set the fake as part of its
+ * operational code because the test harness can't call it directly and pass in
+ * the fake implementation.
  * 
  * @author Robert J. Muller
  */
