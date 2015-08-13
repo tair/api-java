@@ -1,0 +1,12 @@
+<jboss-deployment-structure>
+    <deployment>
+        <dependencies>
+            <module name="org.codehaus.jackson.jackson-core-asl" services="import" />
+            <module name="org.codehaus.jackson.jackson-jaxrs" services="import" />
+            <module name="org.codehaus.jackson.jackson-mapper-asl" services="import" />
+            <module name="org.codehaus.jackson.jackson-xc" services="import" />
+            <module name="com.oracle.ojdbc6" services="import" />
+            <module name="com.poesys.poesys-ms" services="import" />
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+	<!-- the log configuration file for the AndroMDA project -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+	
+	<!-- ============================================ Append error messages to a local
+		error log ============================================ -->
+	<appender name="FILE" class="org.apache.log4j.FileAppender">
+		<param name="File" value="api-runtime.log" />
+		<param name="Threshold" value="DEBUG" />
+		<param name="Append" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- ================================ Append messages to the console ================================
+		-->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Threshold" value="DEBUG" />
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The default pattern: Date Priority [Category] Message\n -->
+			<!-- <param name="ConversionPattern" value="%-5p [%c{1}] %m%n"/> -->
+			<param name="ConversionPattern" value="%-5p [%C] %m%n" />
+		</layout>
+	</appender>
+	
+	
+	<!--
+		================== Custom limit categories ==================
+	-->
+	
+	<!-- TAIR logging -->
+	<!-- Note: if you want to set the priority for only one appender, add <appender-ref
+		ref="CONSOLE"/> or whatever; but note that you also have the root appending, so
+		you'll get two messages unless you also set log4j.additivity.<package>.<class>=false
+		-->
+	
+	<category name="com.arjuna">
+		<priority value="WARN"/>
+	</category>
+	<category name="org.apache.tomcat.util.modeler">
+		<priority value="WARN"/>
+	</category>
+	<category name="sun.rmi">
+		<priority value="WARN"/>
+	</category>
+	<category name="javax.enterprise">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.apache.catalina">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.apache.coyote">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.apache.jasper">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.apache.tomcat">
+		<priority value="INFO"/>
+	</category>
+	<category name="jacorb">
+		<priority value="WARN"/>
+	</category>
+	<category name="jacorb.config">
+		<priority value="ERROR"/>
+	</category>
+	<category name="org.xnio">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.infinispan">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.sun">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.jboss">
+		<priority value="INFO"/>
+	</category>
+	<category name="javax.faces">
+		<priority value="INFO"/>
+	</category>
+	<category name="javax.xml">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.richfaces">
+		<priority value="INFO"/>
+	</category>
+	<category name="org.hibernate">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.google">
+		<priority value="WARN"/>
+	</category>
+	<category name="net.rubyeye">
+		<priority value="WARN"/>
+	</category>
+	<category name="com.ocpsoft">
+		<priority value="WARN"/>
+	</category>
+	<category name="com.poesys">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dto">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dao.DaoCacheFactory">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dao.insert">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dao.update">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dao.delete">
+		<priority value="INFO"/>
+	</category>
+	<category name="com.poesys.db.dao.query">
+		<priority value="INFO"/>
+	</category>
+  <category name="org.phoenixbioinformatics">
+    <priority value="INFO"/>
+  </category>
+	
+	<!-- ========================= Setup the Root category ========================= -->
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+	
+</log4j:configuration>

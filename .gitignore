@@ -1,0 +1,12 @@
+.project
+.myeclipse
+.mymetadata
+.classpath
+.settings/
+.DS_Store
+build.properties
+*.mex
+*.class
+*.log
+*.war
+/bin/
